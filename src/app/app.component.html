@@ -1,0 +1,26 @@
+<app-menu></app-menu>
+<div class="container">
+  <div class="container-fluid">
+  
+    <h1>
+      Welcome to Angular 17
+    </h1>
+    <div>
+      <app-listuser></app-listuser>
+    </div>
+    <h3>Timer(5s)</h3>
+    
+    @defer (on timer(5s)) {
+      <div>Visible après 5s</div>
+    }
+    @placeholder {
+      <div>Placeholder</div>
+    }
+    @error {
+      <span>Error</span>
+    }
+    @loading(minimum 1s) {
+      <span>Loading...</span>
+    }
+    </div>
+</div>

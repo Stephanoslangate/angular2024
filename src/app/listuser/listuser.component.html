@@ -1,0 +1,25 @@
+<ul>
+    @for (user of users(); track user.id; let k = $index) {
+        <li>
+            <h4>{{user.name}} {{k+1}}
+                <input type="checkbox" [(ngModel)]="user.isActive" />
+            </h4>
+            @if (user.isActive) {
+                <span> - {{user.additionalInfo}}</span>
+            }
+            <div>
+                @switch (user.status) {
+                    @case ('active') {
+                      <span>Statut: Actif</span>
+                    }
+                    @case ('inactive') {
+                      <span>Statut: Inactif</span>
+                    }
+                    @default {
+                      <span>Statut: Inconnu</span>
+                    }
+                  }
+            </div>
+        </li>
+    }
+</ul>
